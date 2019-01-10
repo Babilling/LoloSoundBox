@@ -1,6 +1,6 @@
 // register service worker
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/PWASoundBox/sw.js', { scope: '/PWASoundBox/' }).then(function(reg) {
+  navigator.serviceWorker.register('/LoloSoundBox/sw.js', { scope: '/LoloSoundBox/' }).then(function(reg) {
 
     if(reg.installing) {
       console.log('SoundBox SW installing');
@@ -32,7 +32,7 @@ function soundLoad(soundJSON) {
         arrayResponse[1] = soundJSON;
         resolve(arrayResponse);
       } else {
-        reject(Error('Sound didn\'t load successfully; error code:' + request.statusText));
+        reject(Error('Sound didn\'t load successfully; error code:' + request.statusText + " :" + soundJSON.url));
       }
     };
 
